@@ -52,28 +52,3 @@ def run(argv=None):
                 create_disposition=beam.io.BigQueryDisposition.CREATE_IF_NEEDED,
             )
         )
-
-# python3 user_event_pipeline.py \
-#   --runner DataflowRunner \
-#   --project pratice-gcp-service \
-#   --region us-central1 \
-#   --staging_location gs://gcp-practice-012/Dataflow/user_event/staging \
-#   --temp_location gs://gcp-practice-012/Dataflow/user_event/temp \
-#   --template_location gs://gcp-practice-012/Dataflow/templates/user_event_template \
-#   --input_subscription projects/pratice-gcp-service/subscriptions/user_event-sub \
-#   --output_table pratice-gcp-service:analytics.user_event
-
-
-# python3 user_event_pipeline.py \
-#   --runner DataflowRunner \
-#   --project pratice-gcp-service \
-#   --staging_location gs://gcp-practice-012/Dataflow/user_event/staging \
-#   --template_location gs://gcp-practice-012/Dataflow/templates/user_event_template \
-#   --region us-central1 
-
-
-# gcloud dataflow jobs run user-event-job-1 \
-#   --gcs-location gs://gcp-practice-012/Dataflow/templates/user_event_template \
-#   --region us-central1 \
-#   --parameters input_subscription=projects/pratice-gcp-service/subscriptions/user_event-sub,\
-# output_table=pratice-gcp-service:analytics.user_event
